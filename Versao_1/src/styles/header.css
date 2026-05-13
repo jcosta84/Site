@@ -34,8 +34,8 @@ header {
 }
 
 .nav-item.active a {
-    color: #000000;
-    border-bottom: 3px solid #FFFF00;
+    color: #4682B4;
+    border-bottom: 3px solid #140c7c;
     font-weight: 700;
 }
 
