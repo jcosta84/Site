@@ -1,0 +1,30 @@
+footer {
+    width: 100%;
+    overflow: hidden;
+    background-color: #E9F5F1;
+}
+
+
+
+#footer_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8% 24px 8%;
+    margin-top: -5px;
+}
+
+#copyright {
+    color: #1d1d1d;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    
+
+    #footer_items {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 8% 24px 8%;
+    }
+}
