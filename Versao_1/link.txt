@@ -10,3 +10,5 @@ https://fonts.google.com/specimen/Playfair+Display
 https://www.homehost.com.br/blog/tutoriais/tabela-de-cores-html/
 
 https://cdnjs.com/libraries/jquery
+
+<script src="https://unpkg.com/scrollreveal"></script>
