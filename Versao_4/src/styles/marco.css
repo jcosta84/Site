@@ -498,3 +498,100 @@ header {
     }
 
 }
+
+/* =========================================
+   LINKS DOS PRODUTOS
+   ========================================= */
+
+.produto-link {
+    color: #225b78;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.produto-link:hover {
+    color: #173f54;
+    text-decoration: underline;
+}
+
+.produto-link:focus-visible {
+    outline: 2px solid #225b78;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   PÁGINA INDIVIDUAL DO PRODUTO
+   ========================================= */
+
+.detalhe-produto {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.detalhe-produto img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    background: white;
+}
+
+.detalhe-informacoes {
+    flex: 1;
+}
+
+.detalhe-preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #225b78;
+    margin: 15px 0;
+}
+
+@media (max-width: 600px) {
+    .detalhe-produto {
+        flex-direction: column;
+    }
+
+    .detalhe-produto img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+/* ========================================
+   LINKS DA TABELA DE PRODUTOS
+   ======================================== */
+
+.produto-link {
+    color: #225b78;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.produto-link:hover {
+    color: #173f54;
+    text-decoration: underline;
+}
+
+.produto-link:focus-visible {
+    outline: 2px solid #225b78;
+    outline-offset: 3px;
+}
+
+.imagem-produto {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: 280px;
+    object-fit: contain;
+    background-color: white;
+    border: 1px solid #b7d2cc;
+    border-radius: 12px;
+    padding: 12px;
+}
