@@ -1,0 +1,105 @@
+
+/* =====================================================
+   AQUAPET - ESTILOS GERAIS
+   Ficheiro: src/styles/styles.css
+   ===================================================== */
+
+/* 1. IMPORTAÇÃO DA FONTE */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* 2. IMPORTAÇÃO DOS ESTILOS DAS SECÇÕES */
+
+@import url('contacto.css');
+@import url('footer.css');
+@import url('header.css');
+@import url('home.css');
+@import url('produto.css');
+
+/* 3. CONFIGURAÇÕES GERAIS */
+
+* {
+    font-family: "Playfair Display", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #E9F5F1;
+    min-height: 100vh;
+}
+
+/* 4. BOTÕES PADRÃO */
+
+.btn-default {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(143, 190, 204);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-default:hover {
+    background-color: rgb(84, 112, 121);
+}
+
+/* 5. REDES SOCIAIS */
+
+.social-media-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1d1d1d;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Corrigido: hover aplicado diretamente ao link */
+
+.social-media-buttons a:hover {
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. TÍTULOS DAS SECÇÕES */
+
+.section-title {
+    color: #1d1d1d;
+    margin-bottom: 16px;
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: #333333;
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+}
+
+/* 7. ACESSIBILIDADE */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #225b78;
+    outline-offset: 3px;
+}

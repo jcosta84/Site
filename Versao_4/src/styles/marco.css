@@ -1,0 +1,500 @@
+
+/* =====================================================
+   AQUAPET - MARCO 1
+   Ficheiro: styles/marco.css
+   Ajustes visuais e responsividade
+   ===================================================== */
+
+
+/* =====================================================
+   1. CONFIGURAÇÕES GERAIS
+   ===================================================== */
+
+body {
+    color: #172e2c;
+}
+
+main {
+    min-height: 65vh;
+}
+
+
+/* =====================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ===================================================== */
+
+header {
+    padding: 16px 8%;
+}
+
+/* Corrigido: nav-logo corresponde ao HTML */
+
+#nav-logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#nav_list {
+    gap: 28px;
+}
+
+.nav-item a {
+    font-size: 17px;
+}
+
+#mobile_btn {
+    color: #225b78;
+}
+
+#mobile_nav_list {
+    list-style: none;
+    padding: 12px 0;
+}
+
+#mobile_nav_list a {
+    text-decoration: none;
+    color: #225b78;
+    font-weight: bold;
+}
+
+/* Garantir que o menu oculto permanece escondido */
+
+#mobile_menu[hidden] {
+    display: none !important;
+}
+
+
+/* =====================================================
+   3. PÁGINA INICIAL
+   ===================================================== */
+
+#home {
+    min-height: unset;
+    padding: 55px 8%;
+    gap: 30px;
+    align-items: center;
+}
+
+#cta {
+    width: 55%;
+    margin: 0;
+}
+
+#cta .title {
+    font-size: 2rem;
+}
+
+#banner {
+    width: 45%;
+    justify-content: center;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   4. SECÇÃO DE PRODUTOS
+   ===================================================== */
+
+#produto {
+    padding: 38px 8%;
+    min-height: unset;
+}
+
+.prod {
+    min-height: 350px;
+}
+
+.prod-image {
+    height: 155px;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   5. CONTACTOS
+   ===================================================== */
+
+#contacto {
+    min-height: unset;
+    padding: 40px 8%;
+}
+
+#entrar_em_contacto {
+    flex: 1;
+}
+
+.contact_item a {
+    color: #225b78;
+}
+
+
+/* =====================================================
+   6. PÁGINAS INTERNAS
+   ===================================================== */
+
+.pagina {
+    padding: 35px 8% 55px;
+}
+
+.pagina h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.pagina h2 {
+    margin: 24px 0 12px;
+}
+
+.pagina p {
+    line-height: 1.65;
+    margin: 10px 0;
+}
+
+.pagina ul,
+.pagina ol {
+    padding-left: 26px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   7. BLOCOS DE CONTEÚDO
+   ===================================================== */
+
+.bloco {
+    background: white;
+    padding: 22px;
+    margin: 18px 0;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #0001;
+}
+
+
+/* =====================================================
+   8. TABELAS DE PRODUTOS
+   ===================================================== */
+
+/* Contentor com rolagem horizontal */
+
+.tabela-rolagem {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+/* Estrutura principal da tabela */
+
+.tabela-rolagem table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 16px;
+}
+
+/* Título da tabela */
+
+.tabela-rolagem caption {
+    font-size: 20px;
+    font-weight: bold;
+    color: #172e2c;
+    padding: 12px;
+    text-align: center;
+    caption-side: top;
+}
+
+/* Células e cabeçalhos */
+
+.tabela-rolagem th,
+.tabela-rolagem td {
+    padding: 12px 15px;
+    border: 1px solid #b7d2cc;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Cabeçalho */
+
+.tabela-rolagem thead th {
+    background-color: #d1e9e3;
+    color: #172e2c;
+    font-weight: bold;
+}
+
+/* Primeira coluna: numeração */
+
+.tabela-rolagem tbody th {
+    font-weight: bold;
+    width: 15%;
+    background-color: transparent;
+}
+
+/* Linhas alternadas */
+
+.tabela-rolagem tbody tr:nth-child(even) {
+    background-color: #f2f8f6;
+}
+
+/* Efeito ao passar o rato */
+
+.tabela-rolagem tbody tr:hover {
+    background-color: #e1f0eb;
+}
+
+/* Coluna dos preços */
+
+.tabela-rolagem td:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   9. GALERIA DE FOTOGRAFIAS
+   ===================================================== */
+
+.grelha-fotos {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.grelha-fotos figure {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    flex: 1 1 190px;
+}
+
+.grelha-fotos img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.grelha-fotos figcaption {
+    padding-top: 8px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   10. FORMULÁRIOS
+   ===================================================== */
+
+.formulario {
+    max-width: 680px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #7d9f99;
+    border-radius: 8px;
+    font: inherit;
+    background: white;
+    color: #172e2c;
+}
+
+/* Destaque ao selecionar um campo */
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: 2px solid #4682b4;
+    outline-offset: 2px;
+}
+
+/* Botões dos formulários */
+
+.formulario button {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 10px;
+    background: #4682b4;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.formulario button:hover {
+    background: #225b78;
+}
+
+.formulario button:focus-visible {
+    outline: 2px solid #172e2c;
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   11. NOTAS E BOTÕES DE LIGAÇÃO
+   ===================================================== */
+
+.nota {
+    font-size: 0.9rem;
+    color: #465d59;
+}
+
+.botao-link {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #4682b4;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.botao-link:hover {
+    background: #225b78;
+}
+
+.botao-link:focus-visible {
+    outline: 2px solid #172e2c;
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   12. RESPONSIVIDADE - TABLETS
+   ===================================================== */
+
+@media (max-width: 1170px) {
+
+    #home {
+        min-height: unset;
+        padding: 35px 8%;
+    }
+
+    #cta {
+        width: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    #banner {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   13. RESPONSIVIDADE - TELEMÓVEIS
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Páginas internas */
+
+    .pagina {
+        padding: 25px 5%;
+    }
+
+    .pagina h1 {
+        font-size: 1.6rem;
+    }
+
+    .pagina h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Menu principal */
+
+    #nav_list {
+        display: none;
+    }
+
+    /* Página inicial */
+
+    #home {
+        padding: 25px 5%;
+    }
+
+    #cta {
+        width: 100%;
+    }
+
+    #cta .title {
+        font-size: 1.6rem;
+    }
+
+    /* Produtos */
+
+    #produto {
+        padding: 25px 5%;
+    }
+
+    /* Contactos */
+
+    #contacto {
+        padding: 25px 5%;
+    }
+
+    /* Tabela */
+
+    .tabela-rolagem {
+        margin: 15px 0;
+    }
+
+    .tabela-rolagem table {
+        font-size: 14px;
+    }
+
+    .tabela-rolagem caption {
+        font-size: 18px;
+    }
+
+    .tabela-rolagem th,
+    .tabela-rolagem td {
+        padding: 8px;
+    }
+
+    /* Blocos */
+
+    .bloco {
+        padding: 15px;
+    }
+
+    /* Galeria */
+
+    .grelha-fotos {
+        gap: 12px;
+    }
+
+    .grelha-fotos figure {
+        flex: 1 1 150px;
+    }
+
+    /* Formulários */
+
+    .formulario {
+        width: 100%;
+    }
+
+}
