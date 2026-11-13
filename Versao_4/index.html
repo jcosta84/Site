@@ -1,134 +1,293 @@
+
 <!DOCTYPE html>
 <html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/styles/styles.css">
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Loja Aquapet</title>
+    <meta name="description"
+          content="Aquapet, loja especializada na venda de animais e produtos para animais de estimação em Cabo Verde.">
+
+    <title>Início | Aquapet</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet"
+          href="src/styles/styles.css">
+
+    <!-- CSS Marco 1 -->
+    <link rel="stylesheet"
+          href="src/styles/marco.css">
+
+    <!-- jQuery -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        defer>
+    </script>
+
+    <!-- ScrollReveal -->
+    <script
+        src="https://unpkg.com/scrollreveal"
+        defer>
+    </script>
+
+    <!-- JavaScript principal -->
+    <script
+        src="src/javascript/script.js"
+        defer>
+    </script>
+
 </head>
 
 <body>
+
+    <!-- =========================================
+         CABEÇALHO
+         ========================================= -->
+
     <header>
-        <nav id="navbar">
-            <i class="fa-solid fa-house" id="nav_logo">Aquapet</i>
 
+        <nav id="navbar"
+             aria-label="Navegação principal">
+
+            <!-- Logótipo -->
+            <a href="index.html"
+               id="nav_logo"
+               aria-label="Aquapet - Página inicial">
+
+                <i class="fa-solid fa-house"
+                   aria-hidden="true"></i>
+
+                AQUAPET
+
+            </a>
+
+            <!-- Menu principal -->
             <ul id="nav_list">
+
                 <li class="nav-item active">
-                    <a href="index.html">Início</a>
+                    <a href="index.html"
+                       aria-current="page">
+                        Início
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="produtos.html">Lista de Produtos</a>
+                    <a href="produtos.html">
+                        Lista de Produtos
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="contacto.html">Entrar em Contato</a>
+                    <a href="contactos.html">
+                        Entrar em Contato
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="sobre.html">
+                        Sobre Nós
+                    </a>
                 </li>
+
             </ul>
 
+            <!-- Botão menu móvel -->
+            <button
+                type="button"
+                id="mobile_btn"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mobile_menu">
 
+                <i class="fa-solid fa-bars"
+                   aria-hidden="true"></i>
 
-            <button id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
             </button>
+
         </nav>
-        <div id="mobile_menu">
+
+        <!-- Menu móvel -->
+        <div id="mobile_menu" hidden>
+
             <ul id="mobile_nav_list">
-                <li class="nav-item">
-                    <a href="index.html">Início</a>
+
+                <li class="nav-item active">
+                    <a href="index.html"
+                       aria-current="page">
+                        Início
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="produtos.html">Lista de Produtos</a>
+                    <a href="produtos.html">
+                        Lista de Produtos
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="contacto.html">Entrar em Contato</a>
+                    <a href="contactos.html">
+                        Entrar em Contato
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="sobre.html">
+                        Sobre Nós
+                    </a>
                 </li>
+
             </ul>
-
-
 
         </div>
+
     </header>
 
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+         ========================================= -->
+
     <main id="content">
+
+        <!-- Página inicial -->
         <section id="home">
+
             <div class="shape"></div>
+
+            <!-- Apresentação -->
             <div id="cta">
+
                 <h1 class="title">
-                    Bem-vindo à Aquapet, a loja especializada na venda de animais e produtos para os seus animais de
-                    estimação
-                    <span>volte sempre!</span>
+
+                    Bem-vindo à Aquapet,
+                    a loja especializada na venda
+                    de animais e produtos para
+                    os seus animais de estimação.
+
+                    <span>
+                        Volte sempre!
+                    </span>
+
                 </h1>
+
                 <p class="description">
-                    Na Aquapet, oferecemos uma ampla variedade de produtos para cuidar do seu animal de estimação.
+
+                    Na Aquapet, oferecemos uma ampla
+                    variedade de produtos para cuidar
+                    do seu animal de estimação.
+
                 </p>
 
+
+                <!-- Contacto telefónico -->
                 <div id="cta_buttons">
 
+                    <a href="tel:+2389866418"
+                       id="phone_button">
 
-                    <a href="tel: (+238) 9866418" id="phone_button">
-                        <button class="btn-default">
-                            <i class="fa-solid fa-phone"></i>
+                        <span class="btn-default">
 
-                        </button>
+                            <i class="fa-solid fa-phone"
+                               aria-hidden="true"></i>
+
+                        </span>
+
                         (+238) 9866418
 
-
                     </a>
+
                 </div>
 
+
+                <!-- Redes sociais -->
                 <div class="social-media-buttons">
-                    <a href="https://www.facebook.com/aquapet.lda" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i>
+
+                    <a href="https://www.facebook.com/aquapet.lda"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook da Aquapet">
+
+                        <i class="fab fa-facebook-f"
+                           aria-hidden="true"></i>
+
                     </a>
-                    <a href="https://www.instagram.com/aquapetlda" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i>
+
+                    <a href="https://www.instagram.com/aquapetlda"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram da Aquapet">
+
+                        <i class="fab fa-instagram"
+                           aria-hidden="true"></i>
+
                     </a>
+
                 </div>
+
             </div>
 
+
+            <!-- Banner -->
             <div id="banner">
-                <img src="src/Imagem/Aqua.png" alt="Banner da Loja Aquapet">
+
+                <img
+                    src="src/Imagem/Aqua.png"
+                    alt="Banner da Loja Aquapet">
 
             </div>
+
         </section>
 
-        
     </main>
+
+
+    <!-- =========================================
+         RODAPÉ
+         ========================================= -->
 
     <footer>
 
         <div id="footer_items">
+
             <span id="copyright">
                 &copy; 2026 Aquapet.
             </span>
 
+
             <div class="social-media-buttons">
-                <a href="https://www.facebook.com/aquapet.lda" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook-f"></i>
+
+                <a href="https://www.facebook.com/aquapet.lda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook da Aquapet">
+
+                    <i class="fab fa-facebook-f"
+                       aria-hidden="true"></i>
+
                 </a>
-                <a href="https://www.instagram.com/aquapetlda" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
+
+                <a href="https://www.instagram.com/aquapetlda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram da Aquapet">
+
+                    <i class="fab fa-instagram"
+                       aria-hidden="true"></i>
+
                 </a>
+
             </div>
 
         </div>
-    </footer>
-    <script src="src/javascript/script.js"></script>
-</body>
 
+    </footer>
+
+</body>
 </html>

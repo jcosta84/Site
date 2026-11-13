@@ -1,7 +1,7 @@
 
 /* =====================================================
    AQUAPET - MARCO 1
-   Ficheiro: styles/marco.css
+   Ficheiro: src/styles/marco.css
    Ajustes visuais e responsividade
    ===================================================== */
 
@@ -27,13 +27,31 @@ header {
     padding: 16px 8%;
 }
 
-/* Corrigido: nav-logo corresponde ao HTML */
+/* Logótipo Aquapet */
 
-#nav-logo {
+#nav_logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    color: #4682b4;
     text-decoration: none;
+
     font-size: 24px;
     font-weight: 700;
+    white-space: nowrap;
 }
+
+#nav_logo i {
+    font-size: 24px;
+    color: #4682b4;
+}
+
+#nav_logo:hover {
+    color: #225b78;
+}
+
+/* Navegação principal */
 
 #nav_list {
     gap: 28px;
@@ -43,9 +61,23 @@ header {
     font-size: 17px;
 }
 
+/* Página ativa */
+
+.nav-item.active a {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #24116d;
+}
+
+/* Botão do menu móvel */
+
 #mobile_btn {
     color: #225b78;
+    cursor: pointer;
 }
+
+/* Lista do menu móvel */
 
 #mobile_nav_list {
     list-style: none;
@@ -58,7 +90,11 @@ header {
     font-weight: bold;
 }
 
-/* Garantir que o menu oculto permanece escondido */
+#mobile_nav_list a:hover {
+    color: #173f54;
+}
+
+/* Manter menu oculto quando necessário */
 
 #mobile_menu[hidden] {
     display: none !important;
@@ -152,6 +188,11 @@ header {
     margin: 24px 0 12px;
 }
 
+.pagina h3 {
+    margin: 22px 0 10px;
+    font-size: 1.2rem;
+}
+
 .pagina p {
     line-height: 1.65;
     margin: 10px 0;
@@ -181,8 +222,6 @@ header {
    8. TABELAS DE PRODUTOS
    ===================================================== */
 
-/* Contentor com rolagem horizontal */
-
 .tabela-rolagem {
     width: 100%;
     max-width: 100%;
@@ -190,7 +229,7 @@ header {
     margin: 20px 0;
 }
 
-/* Estrutura principal da tabela */
+/* Estrutura principal */
 
 .tabela-rolagem table {
     width: 100%;
@@ -210,7 +249,7 @@ header {
     caption-side: top;
 }
 
-/* Células e cabeçalhos */
+/* Células */
 
 .tabela-rolagem th,
 .tabela-rolagem td {
@@ -228,7 +267,7 @@ header {
     font-weight: bold;
 }
 
-/* Primeira coluna: numeração */
+/* Numeração */
 
 .tabela-rolagem tbody th {
     font-weight: bold;
@@ -257,7 +296,34 @@ header {
 
 
 /* =====================================================
-   9. GALERIA DE FOTOGRAFIAS
+   9. LINKS DOS PRODUTOS
+   ===================================================== */
+
+.produto-link {
+    display: inline-block;
+    padding: 5px 0;
+
+    color: #225b78;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.produto-link:hover {
+    color: #173f54;
+    text-decoration: underline;
+}
+
+.produto-link:focus-visible {
+    outline: 2px solid #225b78;
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   10. GALERIA DE FOTOGRAFIAS
    ===================================================== */
 
 .grelha-fotos {
@@ -287,7 +353,169 @@ header {
 
 
 /* =====================================================
-   10. FORMULÁRIOS
+   11. PÁGINA INDIVIDUAL DO PRODUTO
+   ===================================================== */
+
+.detalhe-produto {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.detalhe-produto img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    background: white;
+}
+
+.detalhe-informacoes {
+    flex: 1;
+    min-width: 0;
+}
+
+.detalhe-preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #225b78;
+    margin: 15px 0;
+}
+
+
+/* =====================================================
+   12. IMAGEM INDIVIDUAL DO PRODUTO
+   ===================================================== */
+
+.imagem-produto {
+    display: block;
+
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+
+    object-fit: contain;
+
+    background-color: white;
+    border: 1px solid #b7d2cc;
+    border-radius: 12px;
+
+    padding: 12px;
+    margin: 20px 0;
+}
+
+
+/* =====================================================
+   13. INFORMAÇÕES DO PRODUTO
+   ===================================================== */
+
+.informacoes-produto {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.titulo-guia {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 25px 0;
+    color: #172e2c;
+}
+
+.conteudo-aba {
+    width: 100%;
+    line-height: 1.7;
+}
+
+.conteudo-aba[hidden] {
+    display: none !important;
+}
+
+.conteudo-aba h3 {
+    color: #172e2c;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.conteudo-aba p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* Separadores Descrição e Detalhes */
+
+.abas-produto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 2px solid #d1e9e3;
+    margin-bottom: 20px;
+}
+
+.aba-produto {
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+
+    font: inherit;
+    font-weight: 600;
+    color: #465d59;
+
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.aba-produto:hover {
+    color: #225b78;
+}
+
+.aba-produto.ativa {
+    color: #225b78;
+    border-bottom-color: #4682b4;
+}
+
+.aba-produto:focus-visible {
+    outline: 2px solid #4682b4;
+    outline-offset: 2px;
+}
+
+/* Tabela de detalhes */
+
+.tabela-detalhes {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin: 15px 0;
+}
+
+.tabela-detalhes th,
+.tabela-detalhes td {
+    border: 1px solid #b7d2cc;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-detalhes th {
+    width: 35%;
+    background: #d1e9e3;
+}
+
+/* Avisos */
+
+.aviso-legal {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f2f8f6;
+    border-left: 4px solid #4682b4;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   14. FORMULÁRIOS
    ===================================================== */
 
 .formulario {
@@ -311,15 +539,15 @@ header {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+
     padding: 11px;
     border: 1px solid #7d9f99;
     border-radius: 8px;
+
     font: inherit;
     background: white;
     color: #172e2c;
 }
-
-/* Destaque ao selecionar um campo */
 
 .campo input:focus,
 .campo select:focus,
@@ -328,16 +556,19 @@ header {
     outline-offset: 2px;
 }
 
-/* Botões dos formulários */
+/* Botões */
 
 .formulario button {
     padding: 12px 22px;
     border: 0;
     border-radius: 10px;
+
     background: #4682b4;
     color: white;
+
     font: inherit;
     cursor: pointer;
+
     transition: background-color 0.2s ease;
 }
 
@@ -352,7 +583,7 @@ header {
 
 
 /* =====================================================
-   11. NOTAS E BOTÕES DE LIGAÇÃO
+   15. NOTAS E BOTÕES DE LIGAÇÃO
    ===================================================== */
 
 .nota {
@@ -363,15 +594,19 @@ header {
 .botao-link {
     display: inline-block;
     padding: 10px 18px;
+
     background: #4682b4;
     color: white;
+
     border-radius: 10px;
     text-decoration: none;
+
     transition: background-color 0.2s ease;
 }
 
 .botao-link:hover {
     background: #225b78;
+    color: white;
 }
 
 .botao-link:focus-visible {
@@ -381,7 +616,7 @@ header {
 
 
 /* =====================================================
-   12. RESPONSIVIDADE - TABLETS
+   16. RESPONSIVIDADE - TABLETS
    ===================================================== */
 
 @media (max-width: 1170px) {
@@ -405,10 +640,28 @@ header {
 
 
 /* =====================================================
-   13. RESPONSIVIDADE - TELEMÓVEIS
+   17. RESPONSIVIDADE - TELEMÓVEIS
    ===================================================== */
 
 @media (max-width: 600px) {
+
+    /* Cabeçalho */
+
+    header {
+        padding: 12px 5%;
+    }
+
+    #nav_logo {
+        font-size: 21px;
+    }
+
+    #nav_logo i {
+        font-size: 21px;
+    }
+
+    #nav_list {
+        display: none;
+    }
 
     /* Páginas internas */
 
@@ -422,12 +675,6 @@ header {
 
     .pagina h2 {
         font-size: 1.3rem;
-    }
-
-    /* Menu principal */
-
-    #nav_list {
-        display: none;
     }
 
     /* Página inicial */
@@ -456,7 +703,7 @@ header {
         padding: 25px 5%;
     }
 
-    /* Tabela */
+    /* Tabelas */
 
     .tabela-rolagem {
         margin: 15px 0;
@@ -473,6 +720,12 @@ header {
     .tabela-rolagem th,
     .tabela-rolagem td {
         padding: 8px;
+    }
+
+    .tabela-detalhes th,
+    .tabela-detalhes td {
+        padding: 8px;
+        font-size: 14px;
     }
 
     /* Blocos */
@@ -497,62 +750,8 @@ header {
         width: 100%;
     }
 
-}
+    /* Páginas individuais */
 
-/* =========================================
-   LINKS DOS PRODUTOS
-   ========================================= */
-
-.produto-link {
-    color: #225b78;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px 0;
-}
-
-.produto-link:hover {
-    color: #173f54;
-    text-decoration: underline;
-}
-
-.produto-link:focus-visible {
-    outline: 2px solid #225b78;
-    outline-offset: 3px;
-}
-
-/* =========================================
-   PÁGINA INDIVIDUAL DO PRODUTO
-   ========================================= */
-
-.detalhe-produto {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    margin: 25px 0;
-}
-
-.detalhe-produto img {
-    width: 300px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: contain;
-    background: white;
-}
-
-.detalhe-informacoes {
-    flex: 1;
-}
-
-.detalhe-preco {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #225b78;
-    margin: 15px 0;
-}
-
-@media (max-width: 600px) {
     .detalhe-produto {
         flex-direction: column;
     }
@@ -561,37 +760,23 @@ header {
         width: 100%;
         max-width: 350px;
     }
-}
-/* ========================================
-   LINKS DA TABELA DE PRODUTOS
-   ======================================== */
 
-.produto-link {
-    color: #225b78;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
+    .imagem-produto {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
 
-.produto-link:hover {
-    color: #173f54;
-    text-decoration: underline;
-}
+    .titulo-guia {
+        font-size: 1.3rem;
+    }
 
-.produto-link:focus-visible {
-    outline: 2px solid #225b78;
-    outline-offset: 3px;
-}
+    .abas-produto {
+        gap: 5px;
+    }
 
-.imagem-produto {
-    display: block;
-    width: 100%;
-    max-width: 350px;
-    height: 280px;
-    object-fit: contain;
-    background-color: white;
-    border: 1px solid #b7d2cc;
-    border-radius: 12px;
-    padding: 12px;
+    .aba-produto {
+        padding: 10px 12px;
+    }
+
 }

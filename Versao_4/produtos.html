@@ -2,52 +2,117 @@
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aquapet, loja de animais e produtos para animais em Cabo Verde.">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Conheça os animais e produtos disponíveis na Aquapet, em Cabo Verde.">
+
     <title>Lista de Produtos | Aquapet</title>
-    <link rel="stylesheet" href="src/styles/styles.css">
-    <link rel="stylesheet" href="src/styles/marco.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="src/javascript/scripts.js" defer></script>
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet"
+          href="src/styles/styles.css">
+
+    <!-- CSS Marco 1 -->
+    <link rel="stylesheet"
+          href="src/styles/marco.css">
+
+    <!-- JavaScript -->
+    <script src="src/javascript/script.js" defer></script>
 </head>
 <body>
     <header>
-        <nav id="navbar" aria-label="Navegação principal">
-            <a href="index.html" id="nav-logo">Aquapet</a>
-            <ul id="nav_list">
-                <li class="nav-item">
-                    <a href="index.html">Início</a>
-                </li>
-                <li class="nav-item active">
-                    <a href="produtos.html">Lista de Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contactos.html">Entrar em Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a href="sobre.html">Sobre Nós</a>
-                </li>
-            </ul>
-            <button type="button" id="mobile_btn" aria-label="Abrir ou Fechar Menu" aria-expanded="false" aria-controls="mobile_menu">=</button>                
-        </nav>
-        <div id="mobile_menu" aria-label="Menu móvel" hidden>
-            <ul id="mobile_nav_list">
-                <li class="nav-item">
-                    <a href="index.html">Início</a>
-                </li>
-                <li class="nav-item active">
-                    <a href="produtos.html">Lista de Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contactos.html">Entrar em Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a href="sobre.html">Sobre Nós</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+    <nav id="navbar" aria-label="Navegação principal">
+
+        <!-- Logótipo Aquapet -->
+        <a href="index.html" id="nav_logo">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            AQUAPET
+        </a>
+
+        <!-- Menu principal -->
+        <ul id="nav_list">
+
+            <li class="nav-item">
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a href="produtos.html"
+                   aria-current="page">
+                    Lista de Produtos
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="contactos.html">
+                    Entrar em Contato
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="sobre.html">
+                    Sobre Nós
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- Botão do menu móvel -->
+        <button type="button"
+                id="mobile_btn"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mobile_menu">
+
+            <i class="fa-solid fa-bars"
+               aria-hidden="true"></i>
+        </button>
+
+    </nav>
+
+    <!-- Menu móvel -->
+    <div id="mobile_menu" hidden>
+
+        <ul id="mobile_nav_list">
+
+            <li class="nav-item">
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a href="produtos.html"
+                   aria-current="page">
+                    Lista de Produtos
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="contactos.html">
+                    Entrar em Contato
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="sobre.html">
+                    Sobre Nós
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</header>
     <main id="content">
         <section class="pagina">
             <h1>Lista de Produtos</h1>
@@ -71,23 +136,27 @@
                         </tr>
                         <tr>
                             <th scope="row">02</th>
-                            <td><a href="mesa2.html" class="produto-link">Cão</a></td>
-                            <td>200,00 CVE</td>
+                            <td><a href="mesa2.html" class="produto-link">Oranda</a></td>
+                            <td>1.000,00 CVE</td>
                         </tr>
                         <tr>
                             <th scope="row">03</th>
-                            <td><a href="mesa3.html" class="produto-link">Pássaro</a></td>
-                            <td>80,00 CVE</td>
+                            <td><a href="mesa3.html" class="produto-link">Palhaço Shubunkim</a></td>
+                            <td>650,00 CVE</td>
                         </tr>
                         <tr>
                             <th scope="row">04</th>
-                            <td><a href="mesa4.html" class="produto-link">Peixe</a></td>
-                            <td>50,00 CVE</td>
+                            <td><a href="mesa4.html" class="produto-link">Danio-Zebra</a></td>
+                            <td>350,00 CVE</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p>NOTA: Lembrando que os envios para as ilhas são pendentes de pagamento de uma taxa de envio.</p>
+            <p class="nota">
+                <strong>Nota:</strong>
+                Os envios para as restantes ilhas estão sujeitos
+                ao pagamento de uma taxa de envio.
+            </p>
         </section>
     </main>
     <footer>
