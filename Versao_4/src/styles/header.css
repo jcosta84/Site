@@ -1,10 +1,17 @@
+
+/* AquaPet — cabeçalho e navegação responsiva */
+
 header {
     width: 100%;
-    padding: 28px 8%;
+    padding: 16px 8%;
     position: sticky;
     top: 0;
+    z-index: 100;
     background-color: #E9F5F1;
-    z-index: 3;
+}
+
+header.com-sombra {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
 }
 
 #navbar {
@@ -12,175 +19,125 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-   }
+    gap: 20px;
+}
 
 #nav_logo {
-    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
     color: #4682B4;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#nav_logo i {
+    font-size: 24px;
+    color: inherit;
+}
+
+#nav_logo:hover {
+    color: #225b78;
 }
 
 #nav_list {
     display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    gap: 80px;
 }
 
-.nav-item a {
-    text-decoration: none;
-    font-size: 20px;
+#nav_list .nav-item a {
     color: #4682B4;
+    font-size: 17px;
     font-weight: 500;
-    
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-.nav-item.active a {
-    color: #4682B4;
-    border-bottom: 3px solid #140c7c;
+#nav_list .nav-item.active a,
+#nav_list .nav-item a[aria-current="page"] {
     font-weight: 700;
+    border-bottom: 3px solid #24116d;
 }
 
 #mobile_btn {
     display: none;
-    
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #225b78;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
 }
 
 #mobile_menu {
     display: none;
 }
 
-@media screen and (max-width: 1170px) {
-    #nav_list,
-    #navbar .btn-default {
-        display: none;
-    }
-
-    #mobile_btn {
-        display: block;
-        border: none;
-        background-color: transparent;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-    
-    #mobile_menu.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    #mobile_nav_list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin: 12px 0px;
-    }
-
-    #mobile_nav_list .nav-item  {
-     list-style: none;
-     text-align: left;   
-    }
-    
-}
-/* ==========================================
-   AQUAPET - MENU MÓVEL
-   ========================================== */
-
-/* Menu oculto por defeito */
-
 #mobile_menu[hidden] {
     display: none !important;
 }
 
-/* Botão oculto no desktop */
-
-#mobile_btn {
-    display: none;
-    border: none;
-    background: transparent;
-    color: #225b78;
-    font-size: 24px;
-    cursor: pointer;
+#mobile_nav_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-/* Formato tablet e telemóvel */
-
+/* Tablets e telemóveis */
 @media screen and (max-width: 1170px) {
-
-    /* Ocultar navegação horizontal */
-
     #nav_list {
         display: none;
     }
 
-    /* Mostrar botão do menu */
-
     #mobile_btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
+        display: inline-flex;
     }
-
-    /* Menu aberto */
 
     #mobile_menu:not([hidden]) {
         display: block;
         width: 100%;
-        padding: 15px 8%;
+        padding: 15px 0;
         background-color: #E9F5F1;
         border-top: 1px solid #b7d2cc;
     }
 
-    /* Lista vertical */
-
     #mobile_nav_list {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         gap: 10px;
-
-        list-style: none;
-        margin: 0;
-        padding: 0;
     }
-
-    /* Ligações */
 
     #mobile_nav_list a {
         display: block;
         padding: 12px 15px;
-
+        border-radius: 8px;
         color: #225b78;
         font-size: 17px;
         font-weight: 600;
         text-decoration: none;
-
-        border-radius: 8px;
     }
 
-    /* Passagem do rato */
-
-    #mobile_nav_list a:hover {
-        background-color: #d1e9e3;
-    }
-
-    /* Página ativa */
-
-    #mobile_nav_list .active a {
+    #mobile_nav_list a:hover,
+    #mobile_nav_list a:focus-visible,
+    #mobile_nav_list .active a,
+    #mobile_nav_list a[aria-current="page"] {
         background-color: #d1e9e3;
         color: #173f54;
-        font-weight: 700;
     }
-
 }
 
-/* Formato desktop */
-
+/* Computadores */
 @media screen and (min-width: 1171px) {
-
     #mobile_menu {
         display: none !important;
     }
-
 }

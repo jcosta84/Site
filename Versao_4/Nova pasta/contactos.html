@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Conheça os animais e produtos disponíveis na Aquapet, em Cabo Verde.">
+
+    <title>Entrar em contacto | Aquapet</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet"
+          href="src/styles/styles.css">
+
+    <!-- CSS Marco 1 -->
+    <link rel="stylesheet"
+          href="src/styles/marco.css">
+
+    <!-- JavaScript -->
+    <script src="src/javascript/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar" aria-label="Navegação principal">
+            <a href="index.html" id="nav_logo">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                AQUAPET
+            </a>
+            <ul id="nav_list">
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="produtos.html">Lista de Produtos</a></li>
+                <li class="nav-item active"><a href="contactos.html" aria-current="page">Entrar em contacto</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+            <button type="button" id="mobile_btn" aria-label="Abrir ou fechar menu" aria-expanded="false"
+                aria-controls="mobile_menu">☰</button>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item"><a href="index.html">Início</a></li>                
+                <li class="nav-item"><a href="produtos.html">Lista de Produtos</a></li>
+                <li class="nav-item"><a href="contactos.html">Entrar em contacto</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+        </div>
+    </header>
+    <main id="content">
+        <section id="contacto">
+            <img src="src/Imagem/Contacto.png" id="aqua_cont" width="600" height="360"
+                alt="Área de contactos">
+            <div id="entrar_em_contacto">
+                <h1 class="section-title">Entre em contacto</h1>
+                <p>Estamos disponíveis para esclarecer dúvidas sobre animais, produtos e equipamentos. Utilize os
+                    contactos
+                    indicados ou preencha o formulário demonstrativo.</p>
+                <address id="contact_info">
+                    <div class="contact_item">Telefone: <a href="tel:+2389866418">(+238) 986 64 18</a></div>
+                    <div class="contact_item">Email: <a href="mailto:aquapet@gmail.com">aquapet@gmail.com</a></div>
+                    <div class="contact_item">Localização: Cabo Verde</div>
+                </address>
+            </div>
+        </section>
+        <section class="pagina">
+            <div class="bloco formulario">
+                <h2>Formulário de contacto</h2>
+                <p>Exemplo académico de formulário HTML5. Não envia nem armazena dados.</p>
+                <form action="contactos.html" method="get">
+                    <div class="campo"><label for="nome">Nome completo *</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" maxlength="100" required>
+                    </div>
+                    <div class="campo"><label for="email">Email *</label>
+                        <input type="email" id="email" name="email" autocomplete="email" maxlength="150" required>
+                    </div>
+                    <div class="campo"><label for="assunto">Assunto *</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="animais">Informações sobre animais</option>
+                            <option value="produtos">Informações sobre produtos</option>
+                            <option value="equipamentos">Equipamentos para aquários</option>
+                            <option value="outro">Outro assunto</option>
+                        </select>
+                    </div>
+                    <div class="campo"><label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" maxlength="1000" required></textarea>
+                    </div>
+                    <button type="submit">Testar formulário</button>
+                    <p class="nota">Atenção: nesta demonstração, os valores são colocados no endereço da página (método
+                        GET).
+                        Não introduza dados pessoais reais. O envio de mensagens será implementado numa fase futura.</p>
+                </form>
+            </div>
+            <section class="tabela-rolagem">
+                <h2>Horário de atendimento</h2>
+                <table>
+                    <caption>Horário de Funcionamento</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Semana</th>
+                            <th scope="col">Manha</th>
+                            <th scope="col">Tarde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Segunda-feira</th>
+                            <td>08:00 - 12:00</td>
+                            <td>14:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Terça-feira</th>
+                            <td>08:00 - 12:00</td>
+                            <td>14:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quarta-feira</th>
+                            <td>08:00 - 12:00</td>
+                            <td>14:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quinta-feira</th>
+                            <td>08:00 - 12:00</td>
+                            <td>14:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sexta-feira</th>
+                            <td>08:00 - 12:00</td>
+                            <td>14:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sábado</th>
+                            <td>08:00 - 12:00</td>
+                            <td>Fechado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+    <footer>
+
+        <div id="footer_items">
+
+            <span id="copyright">
+                &copy; 2026 Aquapet.
+            </span>
+
+
+            <div class="social-media-buttons">
+
+                <a href="https://www.facebook.com/aquapet.lda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook da Aquapet">
+
+                    <i class="fab fa-facebook-f"
+                       aria-hidden="true"></i>
+
+                </a>
+
+                <a href="https://www.instagram.com/aquapetlda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram da Aquapet">
+
+                    <i class="fab fa-instagram"
+                       aria-hidden="true"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

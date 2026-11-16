@@ -1,148 +1,97 @@
-$(document).ready(function () {
 
-    // MENU MOBILE
-    $('#mobile_btn').on('click', function () {
-        $('#mobile_menu').toggleClass('active');
-        $('#mobile_btn').find('i').toggleClass('fa-x');
-    });
+/* AquaPet — navegação e melhorias progressivas */
 
-    // SECÇÕES E ITENS DO MENU
-    const sections = $('section');
-    const navItems = $('#nav_list .nav-item');
+document.addEventListener('DOMContentLoaded', () => {
+    const botao = document.getElementById('mobile_btn');
+    const menu = document.getElementById('mobile_menu');
+    const cabecalho = document.querySelector('header');
 
-    // DETETAR SCROLL
-    $(window).on('scroll', function () {
+    if (botao && menu) {
+        const icone = botao.querySelector('i');
+        const mediaDesktop = window.matchMedia('(min-width: 1171px)');
 
-        const header = $('header');
-        let activeSectionIndex = 0;
+        function definirMenu(aberto) {
+            menu.hidden = !aberto;
 
-        const scrollPosition = $(window).scrollTop();
+            botao.setAttribute('aria-expanded', String(aberto));
+            botao.setAttribute(
+                'aria-label',
+                aberto ? 'Fechar menu' : 'Abrir menu'
+            );
 
-        // SOMBRA DO HEADER
-        if (scrollPosition <= 0) {
-            header.css('box-shadow', 'none');
-        } else {
-            header.css('box-shadow', '0px 3px 8px rgba(0, 0, 0, 0.1)');
+            if (icone) {
+                icone.classList.toggle('fa-bars', !aberto);
+                icone.classList.toggle('fa-xmark', aberto);
+            } else {
+                botao.textContent = aberto ? '✕' : '☰';
+            }
         }
 
-        // DETETAR SECÇÃO ATIVA
-        sections.each(function (i) {
+        definirMenu(false);
 
-            const section = $(this);
+        botao.addEventListener('click', () => {
+            definirMenu(menu.hidden);
+        });
 
-            const sectionTop =
-                section.offset().top - header.outerHeight() - 20;
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => definirMenu(false));
+        });
 
-            const sectionBottom =
-                sectionTop + section.outerHeight();
-
-            if (
-                scrollPosition >= sectionTop &&
-                scrollPosition < sectionBottom
-            ) {
-                activeSectionIndex = i;
-                return false;
+        document.addEventListener('keydown', evento => {
+            if (evento.key === 'Escape' && !menu.hidden) {
+                definirMenu(false);
+                botao.focus();
             }
         });
 
-        // REMOVER ACTIVE
-        navItems.removeClass('active');
-
-        // ADICIONAR ACTIVE
-        $(navItems[activeSectionIndex]).addClass('active');
-
-    });
-
-    // SCROLL REVEAL APENAS EM ECRÃS MAIORES
-    if (window.innerWidth > 768) {
-
-        ScrollReveal().reveal('#cta', {
-            origin: 'left',
-            duration: 2000,
-            distance: '20%',
-            reset: false
+        mediaDesktop.addEventListener('change', evento => {
+            if (evento.matches) definirMenu(false);
         });
-
-        ScrollReveal().reveal('#produto', {
-            origin: 'bottom',
-            duration: 2000,
-            distance: '20%',
-            reset: false
-        });
-
-        ScrollReveal().reveal('#contacto', {
-            origin: 'right',
-            duration: 2000,
-            distance: '20%',
-            reset: false
-        });
-
     }
 
-});
-/* ==========================================
-   AQUAPET - MENU MÓVEL
-   Abrir e fechar menu de navegação
-   ========================================== */
+    // Sombra no cabeçalho durante a deslocação
+    if (cabecalho) {
+        function atualizarSombra() {
+            cabecalho.classList.toggle(
+                'com-sombra',
+                window.scrollY > 0
+            );
+        }
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const botao = document.getElementById("mobile_btn");
-    const menu = document.getElementById("mobile_menu");
-
-    if (!botao || !menu) {
-        return;
-    }
-
-    const icone = botao.querySelector("i");
-
-    function atualizarMenu(aberto) {
-
-        menu.hidden = !aberto;
-
-        botao.setAttribute(
-            "aria-expanded",
-            String(aberto)
+        window.addEventListener(
+            'scroll',
+            atualizarSombra,
+            { passive: true }
         );
 
-        botao.setAttribute(
-            "aria-label",
-            aberto ? "Fechar menu" : "Abrir menu"
-        );
-
-        if (icone) {
-            icone.classList.toggle("fa-bars", !aberto);
-            icone.classList.toggle("fa-xmark", aberto);
-        }
+        atualizarSombra();
     }
 
-    atualizarMenu(false);
+    // Animações opcionais
+    if (
+        typeof ScrollReveal === 'function' &&
+        window.innerWidth > 768 &&
+        !window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches
+    ) {
+        const animacoes = [
+            ['#cta', 'left'],
+            ['#produto', 'bottom'],
+            ['#contacto', 'right']
+        ];
 
-    botao.addEventListener("click", function () {
-        atualizarMenu(menu.hidden);
-    });
+        const revelar = ScrollReveal();
 
-    menu.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            atualizarMenu(false);
+        animacoes.forEach(([seletor, origem]) => {
+            if (document.querySelector(seletor)) {
+                revelar.reveal(seletor, {
+                    origin: origem,
+                    duration: 1200,
+                    distance: '20px',
+                    reset: false
+                });
+            }
         });
-    });
-
-    document.addEventListener("keydown", function (evento) {
-
-        if (evento.key === "Escape" && !menu.hidden) {
-            atualizarMenu(false);
-            botao.focus();
-        }
-
-    });
-
-    window.addEventListener("resize", function () {
-
-        if (window.innerWidth > 1170 && !menu.hidden) {
-            atualizarMenu(false);
-        }
-
-    });
-
+    }
 });
