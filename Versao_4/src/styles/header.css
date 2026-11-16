@@ -82,3 +82,105 @@ header {
     }
     
 }
+/* ==========================================
+   AQUAPET - MENU MÓVEL
+   ========================================== */
+
+/* Menu oculto por defeito */
+
+#mobile_menu[hidden] {
+    display: none !important;
+}
+
+/* Botão oculto no desktop */
+
+#mobile_btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #225b78;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Formato tablet e telemóvel */
+
+@media screen and (max-width: 1170px) {
+
+    /* Ocultar navegação horizontal */
+
+    #nav_list {
+        display: none;
+    }
+
+    /* Mostrar botão do menu */
+
+    #mobile_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    /* Menu aberto */
+
+    #mobile_menu:not([hidden]) {
+        display: block;
+        width: 100%;
+        padding: 15px 8%;
+        background-color: #E9F5F1;
+        border-top: 1px solid #b7d2cc;
+    }
+
+    /* Lista vertical */
+
+    #mobile_nav_list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ligações */
+
+    #mobile_nav_list a {
+        display: block;
+        padding: 12px 15px;
+
+        color: #225b78;
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+
+        border-radius: 8px;
+    }
+
+    /* Passagem do rato */
+
+    #mobile_nav_list a:hover {
+        background-color: #d1e9e3;
+    }
+
+    /* Página ativa */
+
+    #mobile_nav_list .active a {
+        background-color: #d1e9e3;
+        color: #173f54;
+        font-weight: 700;
+    }
+
+}
+
+/* Formato desktop */
+
+@media screen and (min-width: 1171px) {
+
+    #mobile_menu {
+        display: none !important;
+    }
+
+}

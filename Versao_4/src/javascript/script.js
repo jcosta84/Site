@@ -80,3 +80,69 @@ $(document).ready(function () {
     }
 
 });
+/* ==========================================
+   AQUAPET - MENU MÓVEL
+   Abrir e fechar menu de navegação
+   ========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botao = document.getElementById("mobile_btn");
+    const menu = document.getElementById("mobile_menu");
+
+    if (!botao || !menu) {
+        return;
+    }
+
+    const icone = botao.querySelector("i");
+
+    function atualizarMenu(aberto) {
+
+        menu.hidden = !aberto;
+
+        botao.setAttribute(
+            "aria-expanded",
+            String(aberto)
+        );
+
+        botao.setAttribute(
+            "aria-label",
+            aberto ? "Fechar menu" : "Abrir menu"
+        );
+
+        if (icone) {
+            icone.classList.toggle("fa-bars", !aberto);
+            icone.classList.toggle("fa-xmark", aberto);
+        }
+    }
+
+    atualizarMenu(false);
+
+    botao.addEventListener("click", function () {
+        atualizarMenu(menu.hidden);
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            atualizarMenu(false);
+        });
+    });
+
+    document.addEventListener("keydown", function (evento) {
+
+        if (evento.key === "Escape" && !menu.hidden) {
+            atualizarMenu(false);
+            botao.focus();
+        }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 1170 && !menu.hidden) {
+            atualizarMenu(false);
+        }
+
+    });
+
+});
